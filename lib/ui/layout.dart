@@ -1,6 +1,4 @@
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:the_flutter_ui/ui/action.dart';
+part of ui;
 
 extension LayoutX<T extends Widget> on T {
   //

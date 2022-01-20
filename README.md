@@ -32,7 +32,7 @@ FlutterUI，轻便而高效的书写UI。
 
 #### 示例
 
-```
+```dart
 Row(children: [
     const BlueButton("yes").marginOnly(left: 16),
     const SizedBox(width: 12),
