@@ -1,11 +1,12 @@
 name: flutterui
 description: FlutterUI，轻便而搞笑的书写UI。
 version: 0.0.1
-homepage: senyuanzi@outlook.com
+homepage: https://github.com/senyuanzi/FlutterUI
 
 environment:
   sdk: ">=2.15.1 <3.0.0"
   flutter: ">=1.17.0"
+
 
 dependencies:
   flutter:
