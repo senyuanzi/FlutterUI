@@ -23,22 +23,22 @@ FlutterUI，轻便而高效的书写UI。
 ## Getting started
 
 #### 安装依赖：
+
 ```yaml
-  flutterui: 
+  the_flutter_ui: 
 ```
 
 ## Usage
 
-
 #### 示例
 
-```dart
+```
 Row(children: [
-    const BlueButton("官方").marginOnly(left: 16),
+    const BlueButton("yes").marginOnly(left: 16),
     const SizedBox(width: 12),
-    const WhiteOutlinedButton("线下"),
+    const WhiteOutlinedButton("no"),
     const Spacer(),
-    const Text("免费").fontSize(10).translate(0, -7)
+    const Text("free").fontSize(10).translate(0, -7)
 ]).roundedRect(6).paddingAll(8)
 ```
 
@@ -109,6 +109,5 @@ Swiper 轮播器
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+TODO: Tell users more about the package: where to find more information, how to contribute to the package, how to file
+issues, what response they can expect from the package authors, and more.

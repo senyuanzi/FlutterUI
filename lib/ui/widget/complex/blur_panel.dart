@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutterui/ui.dart';
+import 'package:the_flutter_ui/ui/layout.dart';
 
 class BlurPanel extends StatelessWidget {
   const BlurPanel({

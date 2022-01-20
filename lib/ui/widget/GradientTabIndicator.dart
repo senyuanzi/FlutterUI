@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterui/extension/scope_ex.dart';
+import 'package:the_flutter_ui/extension/scope_ex.dart';
 
 class GradientTabIndicator extends Decoration {
   const GradientTabIndicator({
