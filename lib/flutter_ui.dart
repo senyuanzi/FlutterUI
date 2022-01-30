@@ -10,7 +10,7 @@ export 'extension/scope_ex.dart';
 export 'ui/action.dart';
 export 'ui/color.dart';
 export 'ui/rounded_rectangle.dart';
-export 'ui/widget/GradientTabIndicator.dart';
+export 'ui/widget/gradient_tab_indicator.dart';
 export 'ui/widget/button.dart';
 export 'ui/widget/complex/blur_panel.dart';
 export 'ui/widget/complex/swiper.dart';

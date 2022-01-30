@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 
 class DimensValue {
   static double get margin16 => 16;
