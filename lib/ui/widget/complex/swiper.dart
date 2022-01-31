@@ -17,7 +17,7 @@ class SwiperController extends ChangeNotifier {
 
   _SwiperState get _state {
     assert(_swiperState != null,
-    "SwiperController cannot be accessed before a Swiper is built with it");
+        "SwiperController cannot be accessed before a Swiper is built with it");
     return _swiperState!;
   }
 
@@ -34,10 +34,10 @@ class SwiperController extends ChangeNotifier {
   ///
   /// The `duration` and `curve` arguments must not be null.
   Future<void> animateToPage(
-      int page, {
-        required Duration duration,
-        required Curve curve,
-      }) {
+    int page, {
+    required Duration duration,
+    required Curve curve,
+  }) {
     return _state.animateToPage(
       page < 0 ? 0 : page,
       duration: duration,
@@ -101,14 +101,14 @@ class RectangleSwiperIndicator extends _SwiperIndicator {
     Color itemColor = Colors.white,
     Color? selectedItemColor,
   }) : super(
-    padding: padding,
-    spacing: spacing,
-    itemColor: itemColor,
-    itemWidth: itemWidth,
-    itemHeight: itemHeight,
-    itemActiveColor: selectedItemColor,
-    itemShape: BoxShape.rectangle,
-  );
+          padding: padding,
+          spacing: spacing,
+          itemColor: itemColor,
+          itemWidth: itemWidth,
+          itemHeight: itemHeight,
+          itemActiveColor: selectedItemColor,
+          itemShape: BoxShape.rectangle,
+        );
 }
 
 /// Circular style indicator
@@ -120,14 +120,14 @@ class CircleSwiperIndicator extends _SwiperIndicator {
     Color itemColor = Colors.white70,
     Color? itemActiveColor,
   }) : super(
-    padding: padding,
-    spacing: spacing,
-    itemColor: itemColor,
-    itemWidth: radius * 2,
-    itemHeight: radius * 2,
-    itemActiveColor: itemActiveColor,
-    itemShape: BoxShape.circle,
-  );
+          padding: padding,
+          spacing: spacing,
+          itemColor: itemColor,
+          itemWidth: radius * 2,
+          itemHeight: radius * 2,
+          itemActiveColor: itemActiveColor,
+          itemShape: BoxShape.circle,
+        );
 }
 
 class _SwiperIndicator implements SwiperIndicator {
@@ -234,6 +234,7 @@ class Swiper extends StatefulWidget {
     this.direction = Axis.horizontal,
     this.autoStart = true,
     this.controller,
+    this.mask,
     this.indicator,
     this.speed = 300,
     this.interval = const Duration(seconds: 3),
@@ -254,6 +255,7 @@ class Swiper extends StatefulWidget {
     required this.itemBuilder,
     this.autoStart = true,
     this.controller,
+    this.mask,
     this.indicator,
     this.speed = 300,
     this.interval = const Duration(seconds: 3),
@@ -308,6 +310,9 @@ class Swiper extends StatefulWidget {
   /// Whether the swiper start switching when it is built.
   final bool autoStart;
 
+  /// mask
+  final Widget? mask;
+
   /// Swiper page indicator
   final SwiperIndicator? indicator;
 
@@ -333,8 +338,7 @@ class Swiper extends StatefulWidget {
   _SwiperState createState() => _SwiperState();
 }
 
-class _SwiperState extends State<Swiper>
-    with SingleTickerProviderStateMixin<Swiper> {
+class _SwiperState extends State<Swiper> with SingleTickerProviderStateMixin<Swiper> {
   PageController? _pageController;
   late int _index;
   Timer? _timer;
@@ -407,10 +411,10 @@ class _SwiperState extends State<Swiper>
   }
 
   Future<void> animateToPage(
-      int page, {
-        required Duration duration,
-        required Curve curve,
-      }) async {
+    int page, {
+    required Duration duration,
+    required Curve curve,
+  }) async {
     if (widget.childCount < 2) return;
 
     int dest = page % widget.childCount;
@@ -436,9 +440,7 @@ class _SwiperState extends State<Swiper>
 
     _animateToPage = true;
 
-    return _pageController
-        ?.animateToPage(page, duration: duration, curve: curve)
-        .then((e) {
+    return _pageController?.animateToPage(page, duration: duration, curve: curve).then((e) {
       _globalKey.currentState?.update(getIndex());
       if (widget.onChanged != null) widget.onChanged!(dest);
       _animateToPage = false;
@@ -475,14 +477,15 @@ class _SwiperState extends State<Swiper>
       key: ValueKey(widget.circular),
       scrollDirection: widget.direction,
       reverse: widget.reverse,
-      itemCount:
-      widget.circular && widget.childCount != 1 ? null : widget.childCount,
+      itemCount: widget.circular && widget.childCount != 1 ? null : widget.childCount,
       onPageChanged: _onPageChanged,
       controller: _pageController,
       itemBuilder: (context, index) {
         return widget.itemBuilder(context, index % widget.childCount);
       },
     ));
+
+    children.add(Container(child: widget.mask));
 
     if (widget.indicator != null) {
       var indicator = _Indicator(
