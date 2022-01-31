@@ -17,7 +17,7 @@ class SwiperController extends ChangeNotifier {
 
   _SwiperState get _state {
     assert(_swiperState != null,
-        "SwiperController cannot be accessed before a Swiper is built with it");
+    "SwiperController cannot be accessed before a Swiper is built with it");
     return _swiperState!;
   }
 
@@ -34,10 +34,10 @@ class SwiperController extends ChangeNotifier {
   ///
   /// The `duration` and `curve` arguments must not be null.
   Future<void> animateToPage(
-    int page, {
-    required Duration duration,
-    required Curve curve,
-  }) {
+      int page, {
+        required Duration duration,
+        required Curve curve,
+      }) {
     return _state.animateToPage(
       page < 0 ? 0 : page,
       duration: duration,
@@ -101,14 +101,14 @@ class RectangleSwiperIndicator extends _SwiperIndicator {
     Color itemColor = Colors.white,
     Color? selectedItemColor,
   }) : super(
-          padding: padding,
-          spacing: spacing,
-          itemColor: itemColor,
-          itemWidth: itemWidth,
-          itemHeight: itemHeight,
-          itemActiveColor: selectedItemColor,
-          itemShape: BoxShape.rectangle,
-        );
+    padding: padding,
+    spacing: spacing,
+    itemColor: itemColor,
+    itemWidth: itemWidth,
+    itemHeight: itemHeight,
+    itemActiveColor: selectedItemColor,
+    itemShape: BoxShape.rectangle,
+  );
 }
 
 /// Circular style indicator
@@ -120,14 +120,14 @@ class CircleSwiperIndicator extends _SwiperIndicator {
     Color itemColor = Colors.white70,
     Color? itemActiveColor,
   }) : super(
-          padding: padding,
-          spacing: spacing,
-          itemColor: itemColor,
-          itemWidth: radius * 2,
-          itemHeight: radius * 2,
-          itemActiveColor: itemActiveColor,
-          itemShape: BoxShape.circle,
-        );
+    padding: padding,
+    spacing: spacing,
+    itemColor: itemColor,
+    itemWidth: radius * 2,
+    itemHeight: radius * 2,
+    itemActiveColor: itemActiveColor,
+    itemShape: BoxShape.circle,
+  );
 }
 
 class _SwiperIndicator implements SwiperIndicator {
@@ -411,10 +411,10 @@ class _SwiperState extends State<Swiper> with SingleTickerProviderStateMixin<Swi
   }
 
   Future<void> animateToPage(
-    int page, {
-    required Duration duration,
-    required Curve curve,
-  }) async {
+      int page, {
+        required Duration duration,
+        required Curve curve,
+      }) async {
     if (widget.childCount < 2) return;
 
     int dest = page % widget.childCount;
