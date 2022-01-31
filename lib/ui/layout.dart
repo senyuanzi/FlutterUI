@@ -10,6 +10,78 @@ extension LayoutX<T extends Widget> on T {
   //   return SizedBox.expand(child: this);
   // }
 
+  //  布局
+
+  Padding paddingAll(double size) {
+    return padding(left: size, right: size, top: size, bottom: size);
+  }
+
+  Padding get paddingZero => padding();
+
+  Padding paddingSymmetric({double horizontal = 0, double vertical = 0}) {
+    return padding(left: horizontal, right: horizontal, top: vertical, bottom: vertical);
+  }
+
+  Padding paddingLeft(double size) {
+    return padding(left: size);
+  }
+
+  Padding paddingRight(double size) {
+    return padding(right: size);
+  }
+
+  Padding paddingTop(double size) {
+    return padding(top: size);
+  }
+
+  Padding paddingBottom(double size) {
+    return padding(bottom: size);
+  }
+
+  Padding padding({double left = 0, double top = 0, double right = 0, double bottom = 0}) {
+    return Padding(
+      padding: EdgeInsets.only(left: left, top: top, right: right, bottom: bottom),
+      child: this,
+    );
+  }
+
+  //______margin_______
+
+  Container marginAll(double size) {
+    return margin(left: size, right: size, top: size, bottom: size);
+  }
+
+  Container get marginZero => margin();
+
+  Container marginSymmetric({double horizontal = 0, double vertical = 0}) {
+    return margin(left: horizontal, right: horizontal, top: vertical, bottom: vertical);
+  }
+
+  Container marginLeft(double size) {
+    return margin(left: size);
+  }
+
+  Container marginRight(double size) {
+    return margin(right: size);
+  }
+
+  Container marginTop(double size) {
+    return margin(top: size);
+  }
+
+  Container marginBottom(double size) {
+    return margin(bottom: size);
+  }
+
+  Container margin({double left = 0, double top = 0, double right = 0, double bottom = 0}) {
+    return Container(
+      margin: EdgeInsets.only(left: left, top: top, right: right, bottom: bottom),
+      child: this,
+    );
+  }
+
+  //transform 变换
+
   Transform translate(double dx, double dy) {
     return Transform.translate(
       offset: Offset(dx, dy),
@@ -68,6 +140,7 @@ extension LayoutX<T extends Widget> on T {
     return SizedBox(width: width, height: height, child: this);
   }
 
+  ///aspect ratio 纵横比
   AspectRatio aspectRatio(double aspectRatio) {
     return AspectRatio(
       child: this,
