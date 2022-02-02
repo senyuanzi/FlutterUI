@@ -10,6 +10,12 @@ extension TextX on Text {
     return copyWith(style: style?.merge(newStyle) ?? newStyle);
   }
 
+  ///字体粗细、正斜等
+  Text fontWeight(FontWeight? weight) {
+    var newStyle = TextStyle(fontWeight: weight);
+    return copyWith(style: style?.merge(newStyle) ?? newStyle);
+  }
+
   ///粗体
   ///
   Text bold() {
@@ -26,15 +32,49 @@ extension TextX on Text {
 
   ///删除线
   ///
-  Text lineThrough() {
-    var newStyle = const TextStyle(decoration: TextDecoration.lineThrough);
+  Text strikethrough({bool active = true, Color? color}) {
+    var newStyle = TextStyle(
+        decoration: active == true ? TextDecoration.lineThrough : TextDecoration.none,
+        decorationColor: color);
     return copyWith(style: style?.merge(newStyle) ?? newStyle);
   }
 
   ///下划线
   ///
-  Text underLine() {
-    var newStyle = const TextStyle(decoration: TextDecoration.underline);
+  Text underLine({bool active = true, Color? color}) {
+    var newStyle = TextStyle(
+        decoration: active == true ? TextDecoration.underline : TextDecoration.none,
+        decorationColor: color);
+    return copyWith(style: style?.merge(newStyle) ?? newStyle);
+  }
+
+  ///上划线
+  ///
+  Text overLine({bool active = true, Color? color}) {
+    var newStyle = TextStyle(
+        decoration: active == true ? TextDecoration.overline : TextDecoration.none,
+        decorationColor: color);
+    return copyWith(style: style?.merge(newStyle) ?? newStyle);
+  }
+
+  ///字母间距，可为负数
+  ///
+  Text letterSpacing(double spacing) {
+    var newStyle = TextStyle(letterSpacing: spacing);
+    return copyWith(style: style?.merge(newStyle) ?? newStyle);
+  }
+
+  ///单词间距，可为负数
+  ///
+  Text wordSpacing(double spacing) {
+    var newStyle = TextStyle(wordSpacing: spacing);
+    return copyWith(style: style?.merge(newStyle) ?? newStyle);
+  }
+
+  ///行间距，倍数
+  ///
+  Text lineSpacing(double spacing) {
+    var newStyle = TextStyle(height: spacing);
     return copyWith(style: style?.merge(newStyle) ?? newStyle);
   }
 
@@ -53,14 +93,21 @@ extension TextX on Text {
     return copyWith(style: style?.merge(newStyle) ?? newStyle);
   }
 
-  Text fontWeight(FontWeight? weight) {
-    var newStyle = TextStyle(fontWeight: weight);
-    return copyWith(style: style?.merge(newStyle) ?? newStyle);
-  }
-
-  Text maxLines(int num, {TextOverflow? overflow = TextOverflow.ellipsis}) {
+  Text lineLimit(int num, {TextOverflow? overflow = TextOverflow.ellipsis}) {
     return copyWith(maxLines: num, overflow: overflow);
   }
+
+  Text textAlignment(TextAlign align) {
+    return copyWith(textAlign: align);
+  }
+
+  ///todo 手机号中间四位省略为*号，或类似场景。正则？
+  ///truncationMode leading tail middle
+  // String phoneNumber = '13888888888';
+  // String phoneNumberStr = phoneNumber.replaceFirst(RegExp(r'\d{4}'), '****', 3);
+
+  ///todo 艺术字效果 边框、渐变……
+  ///foreground paint
 
   Text copyWith({
     String? data,
