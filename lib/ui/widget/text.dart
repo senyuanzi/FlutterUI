@@ -1,42 +1,42 @@
 import 'package:flutter/material.dart';
 
 extension TextX on Text {
-
-
-
-
-
-  Text demo(int color) {
-    var newStyle = TextStyle(color: Color(color));
-    return copyWith(style: style?.merge(newStyle) ?? newStyle);
-  }
-
-  ///字体 todo Font
-  ///.title
+  ///字体
+  ///配置中先注册family
   ///
-  ///.caption
-  ///
-  ///    .font(.system(size: 12, weight: .light, design: .serif))
-  ///config text font
-  Text font(int color) {
-    var newStyle = TextStyle(color: Color(color));
+  ///config text fontFamily
+  Text fontFamily(String family) {
+    var newStyle = TextStyle(fontFamily: family);
     return copyWith(style: style?.merge(newStyle) ?? newStyle);
   }
 
   ///粗体
   ///
-  Text bold(int color) {
-    var newStyle = TextStyle(color: Color(color));
+  Text bold() {
+    var newStyle = const TextStyle(fontWeight: FontWeight.bold);
     return copyWith(style: style?.merge(newStyle) ?? newStyle);
   }
 
   ///斜体
   ///
-  Text italic(int color) {
-    var newStyle = TextStyle(color: Color(color));
+  Text italic() {
+    var newStyle = const TextStyle(fontStyle: FontStyle.italic);
     return copyWith(style: style?.merge(newStyle) ?? newStyle);
   }
 
+  ///删除线
+  ///
+  Text lineThrough() {
+    var newStyle = const TextStyle(decoration: TextDecoration.lineThrough);
+    return copyWith(style: style?.merge(newStyle) ?? newStyle);
+  }
+
+  ///下划线
+  ///
+  Text underLine() {
+    var newStyle = const TextStyle(decoration: TextDecoration.underline);
+    return copyWith(style: style?.merge(newStyle) ?? newStyle);
+  }
 
   Text colorInt(int color) {
     var newStyle = TextStyle(color: Color(color));
@@ -51,6 +51,15 @@ extension TextX on Text {
   Text fontSize(double size) {
     var newStyle = TextStyle(fontSize: size);
     return copyWith(style: style?.merge(newStyle) ?? newStyle);
+  }
+
+  Text fontWeight(FontWeight? weight) {
+    var newStyle = TextStyle(fontWeight: weight);
+    return copyWith(style: style?.merge(newStyle) ?? newStyle);
+  }
+
+  Text maxLines(int num, {TextOverflow? overflow = TextOverflow.ellipsis}) {
+    return copyWith(maxLines: num, overflow: overflow);
   }
 
   Text copyWith({
