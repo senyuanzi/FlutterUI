@@ -148,6 +148,13 @@ extension LayoutX<T extends Widget> on T {
     );
   }
 
+
+
+  //集合容器
+  ///todo 固定行为 的头部或尾部
+  ///todo align相关
+
+
   ListView inList({
     void Function(BuildContext context, int index)? onItemClick,
     Axis scrollDirection = Axis.vertical,
