@@ -97,6 +97,10 @@ extension TextX on Text {
     return copyWith(maxLines: num, overflow: overflow);
   }
 
+  Text singleLine({TextOverflow? overflow = TextOverflow.ellipsis}) {
+    return lineLimit(1);
+  }
+
   Text textAlignment(TextAlign align) {
     return copyWith(textAlign: align);
   }

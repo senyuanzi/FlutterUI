@@ -3,6 +3,7 @@ library ui;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:the_flutter_ui/ui/action.dart';
+import 'package:the_flutter_ui/extension/scope_ex.dart';
 
 export 'package:the_flutter_ui/flutter_ui.dart';
 

@@ -104,6 +104,13 @@ extension LayoutX<T extends Widget> on T {
   }
 
   //Flex
+  Flexible flexible({
+    int flex = 1,
+    FlexFit fit = FlexFit.loose,
+  }) {
+    return Flexible(flex: flex, fit: fit, child: this);
+  }
+
   Expanded expanded() {
     return Expanded(child: this);
   }
@@ -136,8 +143,46 @@ extension LayoutX<T extends Widget> on T {
     return SizedBox(width: width, child: this);
   }
 
+  ConstrainedBox maxWidth(double? size) {
+    return constraints(maxWidth: size);
+  }
+
+  ConstrainedBox maxHeight(double? size) {
+    return constraints(maxHeight: size);
+  }
+
+  ConstrainedBox minWidth(double? size) {
+    return constraints(minWidth: size);
+  }
+
+  ConstrainedBox minHeight(double? size) {
+    return constraints(minHeight: size);
+  }
+
   SizedBox size({double? width, double? height}) {
     return SizedBox(width: width, height: height, child: this);
+  }
+
+  ConstrainedBox constraints(
+      {double? maxWidth, double? maxHeight, double? minWidth, double? minHeight}) {
+    BoxConstraints constraints = BoxConstraints(
+        maxWidth: maxWidth ?? double.infinity,
+        maxHeight: maxHeight ?? double.infinity,
+        minWidth: minWidth ?? 0,
+        minHeight: minHeight ?? 0);
+
+    if (this is ConstrainedBox) {
+      var thisConstraints = (this as ConstrainedBox).constraints;
+      constraints =
+          maxWidth?.let((it) => thisConstraints.copyWith(maxWidth: maxWidth)) ?? thisConstraints;
+      constraints =
+          maxHeight?.let((it) => thisConstraints.copyWith(maxWidth: maxWidth)) ?? thisConstraints;
+      constraints =
+          minWidth?.let((it) => thisConstraints.copyWith(maxWidth: maxWidth)) ?? thisConstraints;
+      constraints =
+          minHeight?.let((it) => thisConstraints.copyWith(maxWidth: maxWidth)) ?? thisConstraints;
+    }
+    return ConstrainedBox(constraints: constraints, child: this);
   }
 
   ///aspect ratio 纵横比
@@ -148,12 +193,9 @@ extension LayoutX<T extends Widget> on T {
     );
   }
 
-
-
   //集合容器
   ///todo 固定行为 的头部或尾部
   ///todo align相关
-
 
   ListView inList({
     void Function(BuildContext context, int index)? onItemClick,
