@@ -1,3 +1,6 @@
+## 0.2.3
+* SliverLazyColumn
+
 ## 0.2.2
 * text add singleLine
 * constraints

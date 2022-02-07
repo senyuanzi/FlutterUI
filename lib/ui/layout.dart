@@ -264,3 +264,112 @@ extension LayoutX<T extends Widget> on T {
     ));
   }
 }
+
+// class LazyColumn<T> extends StatelessWidget {
+//   const LazyColumn({
+//     Key? key,
+//     required this.data,
+//     required this.childCount,
+//     required this.child,
+//     this.onItemClick,
+//     this.findChildIndexCallback,
+//     this.addAutomaticKeepAlives = true,
+//     this.addRepaintBoundaries = true,
+//     this.addSemanticIndexes = true,
+//     this.semanticIndexOffset = 0,
+//   }) : super(key: key);
+//
+//   final Widget Function(BuildContext context, T element, int index) child;
+//   final List<T> data;
+//   final void Function(BuildContext context, T element, int index)? onItemClick;
+//
+//   final ChildIndexGetter? findChildIndexCallback;
+//   final int? childCount;
+//   final bool addAutomaticKeepAlives;
+//
+//   final bool addRepaintBoundaries;
+//   final bool addSemanticIndexes;
+//
+//   final int semanticIndexOffset;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return SliverList(
+//         delegate: SliverChildBuilderDelegate(
+//               (context, index) {
+//             var element = data[index];
+//             onItemClick?.call(context, element, index);
+//             return child.call(context, element, index);
+//           },
+//           findChildIndexCallback: findChildIndexCallback,
+//           childCount: data.length,
+//           addAutomaticKeepAlives: addAutomaticKeepAlives,
+//           addRepaintBoundaries: addRepaintBoundaries,
+//           addSemanticIndexes: addSemanticIndexes,
+//           semanticIndexOffset: semanticIndexOffset,
+//         ));
+//   }
+// }
+
+class SliverLazyColumn<T> extends StatelessWidget {
+  const SliverLazyColumn({
+    Key? key,
+    required this.data,
+    required this.childCount,
+    required this.child,
+    this.onItemClick,
+    this.findChildIndexCallback,
+    this.addAutomaticKeepAlives = true,
+    this.addRepaintBoundaries = true,
+    this.addSemanticIndexes = true,
+    this.semanticIndexOffset = 0,
+  }) : super(key: key);
+
+  const SliverLazyColumn.bind(
+    this.data, {
+    Key? key,
+    required this.childCount,
+    required this.child,
+    this.onItemClick,
+    this.findChildIndexCallback,
+  })  : semanticIndexOffset = 0,
+        addSemanticIndexes = true,
+        addRepaintBoundaries = true,
+        addAutomaticKeepAlives = true,
+        super(key: key);
+
+  // SliverLazyColumn layout(Widget Function(BuildContext context, T element, int index) child) {
+  //   return this;
+  // }
+
+  final Widget Function(BuildContext context, T element, int index) child;
+  final List<T> data;
+  final void Function(BuildContext context, T element, int index)? onItemClick;
+
+  final ChildIndexGetter? findChildIndexCallback;
+  final int? childCount;
+  final bool addAutomaticKeepAlives;
+
+  final bool addRepaintBoundaries;
+  final bool addSemanticIndexes;
+
+  final int semanticIndexOffset;
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverList(
+        delegate: SliverChildBuilderDelegate(
+      (context, index) {
+        var element = data[index];
+        onItemClick?.call(context, element, index);
+        return child.call(context, element, index);
+      },
+      findChildIndexCallback: findChildIndexCallback,
+      childCount: data.length,
+      addAutomaticKeepAlives: addAutomaticKeepAlives,
+      addRepaintBoundaries: addRepaintBoundaries,
+      addSemanticIndexes: addSemanticIndexes,
+      semanticIndexOffset: semanticIndexOffset,
+    ));
+  }
+}
