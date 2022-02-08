@@ -13,39 +13,43 @@ and the Flutter guide for
 
 FlutterUI，轻便而高效的书写UI。
 
-## Features
+### V0.2.3 文档
+
+后续会继续开发更新。
+
+#### 特性
 
 - 链式调用
 - 简化代码
 - 高可读性
 - 便于维护
 
-## Getting started
-
-#### 安装依赖：
-
-```yaml
-  the_flutter_ui: 
-```
-
-## Usage
-
 #### 示例
 
 ```dart
 Row(children: [
-    const BlueButton("yes").marginOnly(left: 16),
+    const BlueButton("官方").marginOnly(left: 16),
     const SizedBox(width: 12),
-    const WhiteOutlinedButton("no"),
+    const WhiteOutlinedButton("线下"),
     const Spacer(),
-    const Text("free").fontSize(10).translate(0, -7)
+    const Text("免费").fontSize(10).translate(0, -7)
 ]).roundedRect(6).paddingAll(8)
 ```
 
 #### 布局
 
 - padding
+  1. paddingAll
+  2. paddingSymmetric(double horizontal,double vertical)
+  3. paddingLeft
+  4. paddingRight
+  5. paddingTop
+  6. paddingBottom
+  7. padding
 - margin
+  1. marginAll
+  2. 同上
+- flexible
 - aspectRatio
 - expanded
 - positioned 配合stack定位
@@ -55,12 +59,23 @@ Row(children: [
 - size
 - height
 - width
+- constraints 约束
+  1. maxWidth
+  2. maxHeight
+  3. minWidth
+  4. minHeight
+  5. constraints
+
+#### 列表
+- inList
+- inSliverList
+- SliverLazyColumn<T>(data, childCount, child)
 
 #### 变换
 
-- translate
-- rotate
-- scale
+- translate(double dx, double dy)
+- rotate(double angle)
+- scale(double scale)
 
 #### 颜色
 
@@ -70,11 +85,12 @@ Row(children: [
 #### 效果
 
 - roundedRect 圆角
-    - roundedRectVertical
-    - roundedRectHorizontal
-- blur 模糊
-    - blurExpanded 模糊+expanded
--
+  1. roundedRect
+  2. roundedRectVertical
+  3. roundedRectHorizontal
+- blur 毛玻璃
+  1. blur 毛玻璃
+  2. blurExpanded 模糊+expanded
 
 #### 功能
 
@@ -83,29 +99,52 @@ Row(children: [
 - onDoubleClick
 - onLongPress
 
-#### 组件
+#### 官方组件扩展
 
-Text 官方组件 扩展
-
+Text
 - color
 - colorInt
 - fontSize
+- fontFamily
+- fontWeight
+- bold
+- italic
+- strikethrough
+- underLine
+- overLine
+- letterSpacing
+- wordSpacing
+- lineSpacing
+- lineLimit
+- singleLine
+- textAlignment
 
-CircleAvatar 官方组件 扩展
-
+CircleAvatar
 - border 边框
+
+Image
+- coverMode
+- containMode
+- size
+- antialias 抗锯齿
+
+
+#### 组件
 
 CoverCacheImage 缓存、Cover模式的image
 
 GradientTabIndicator 渐变色tab指示器
 
-Button
+- Button
+  1. RRectButton 圆角图片
+  2. RRectOutlinedButton 圆角线框图片
 
-- RRectButton 圆角图片
-- RRectOutlinedButton 圆角线框图片
+Swiper 轮播器 （三层：内容层、蒙版层、指示器层）
 
-Swiper 轮播器
-
+TODO
+- 网络状态、数据状态容器
+- 上拉下拉容器
+- 其他
 ## Additional information
 
 TODO: Tell users more about the package: where to find more information, how to contribute to the package, how to file

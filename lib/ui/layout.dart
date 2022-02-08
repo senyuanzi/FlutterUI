@@ -365,7 +365,7 @@ class SliverLazyColumn<T> extends StatelessWidget {
         return child.call(context, element, index);
       },
       findChildIndexCallback: findChildIndexCallback,
-      childCount: data.length,
+      childCount: childCount ?? data.length,
       addAutomaticKeepAlives: addAutomaticKeepAlives,
       addRepaintBoundaries: addRepaintBoundaries,
       addSemanticIndexes: addSemanticIndexes,
