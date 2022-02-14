@@ -12,7 +12,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cached_network_image: ^3.2.0 # 图像
+  cached_network_image: ^3.2.0
+  flutter_easyrefresh: ^2.2.1
+
 
 
 dev_dependencies:

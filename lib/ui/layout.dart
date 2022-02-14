@@ -77,6 +77,7 @@ extension LayoutX<T extends Widget> on T {
     return Container(
       margin: EdgeInsets.only(left: left, top: top, right: right, bottom: bottom),
       child: this,
+      color: Colors.transparent,
     );
   }
 
