@@ -13,7 +13,7 @@ and the Flutter guide for
 
 FlutterUI，轻便而高效的书写UI。
 
-### V0.2.3 文档
+### V0.2.7 文档
 
 后续会继续开发更新。
 
@@ -23,6 +23,12 @@ FlutterUI，轻便而高效的书写UI。
 - 简化代码
 - 高可读性
 - 便于维护
+
+#### 安装
+```yaml
+dependencies:
+  the_flutter_ui: ^0.2.7
+```
 
 #### 示例
 
@@ -131,11 +137,13 @@ Image
 
 #### 组件
 
+BottomFloatingActionButtonLocation fab控件 底部定位
+
 CoverCacheImage 缓存、Cover模式的image
 
 GradientTabIndicator 渐变色tab指示器
 
-- Button
+Button
   1. RRectButton 圆角图片
   2. RRectOutlinedButton 圆角线框图片
 

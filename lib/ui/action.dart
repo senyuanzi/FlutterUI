@@ -13,11 +13,13 @@ extension WidgetEx<T extends Widget> on T {
     GestureLongPressCallback? onLongPress,
   }) {
     return Material(
+      color: Colors.transparent,
       child: InkWell(
         child: this,
         onTap: onClick,
         onDoubleTap: onDoubleClick,
         onLongPress: onLongPress,
+        highlightColor: Colors.transparent,
       ),
     );
   }
