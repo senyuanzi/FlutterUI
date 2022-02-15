@@ -108,6 +108,9 @@ Row(children: [
 
 #### 组件
 
+RefreshLayout
+上拉下拉 刷新容器
+
 BottomFloatingActionButtonLocation
 fab控件 底部定位
 
@@ -185,7 +188,6 @@ TextField
 
 TODO
 - 网络状态、数据状态容器
-- 上拉下拉容器
 - 其他
 ## Additional information
 
