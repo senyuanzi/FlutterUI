@@ -13,7 +13,7 @@ and the Flutter guide for
 
 FlutterUI，轻便而高效的书写UI。
 
-### V0.2.7 文档
+### V0.3.8 文档
 
 后续会继续开发更新。
 
@@ -27,7 +27,7 @@ FlutterUI，轻便而高效的书写UI。
 #### 安装
 ```yaml
 dependencies:
-  the_flutter_ui: ^0.2.7
+  the_flutter_ui: ^0.2.8
 ```
 
 #### 示例
@@ -105,6 +105,26 @@ Row(children: [
 - onDoubleClick
 - onLongPress
 
+
+#### 组件
+
+BottomFloatingActionButtonLocation
+fab控件 底部定位
+
+CoverCacheImage
+缓存、Cover模式的image
+
+GradientTabIndicator
+渐变色tab指示器
+
+Button
+1. RRectButton 圆角图片
+2. RRectOutlinedButton 圆角线框图片
+
+Swiper
+轮播器 （三层：内容层、蒙版层、指示器层）
+
+
 #### 官方组件扩展
 
 Text
@@ -135,19 +155,33 @@ Image
 - antialias 抗锯齿
 
 
-#### 组件
+TextField
+- color
+- colorInt
+- fontSize
+- fontFamily
+- fontWeight
+- bold
+- italic
+- strikethrough
+- underLine
+- overLine
+- letterSpacing
+- wordSpacing
+- lineSpacing
+- lineLimit
+- noLineLimit
+- singleLine
+- textAlignment
+- hint
+- hintStyle
+- hintWeight
+- hintColor
+- hintSize
+- hintFamily
+- border
+- noBorder
 
-BottomFloatingActionButtonLocation fab控件 底部定位
-
-CoverCacheImage 缓存、Cover模式的image
-
-GradientTabIndicator 渐变色tab指示器
-
-Button
-  1. RRectButton 圆角图片
-  2. RRectOutlinedButton 圆角线框图片
-
-Swiper 轮播器 （三层：内容层、蒙版层、指示器层）
 
 TODO
 - 网络状态、数据状态容器
