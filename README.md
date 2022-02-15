@@ -27,7 +27,7 @@ FlutterUI，轻便而高效的书写UI。
 #### 安装
 ```yaml
 dependencies:
-  the_flutter_ui: ^0.2.8
+  the_flutter_ui: ^0.3.8
 ```
 
 #### 示例
@@ -108,24 +108,24 @@ Row(children: [
 
 #### 组件
 
-RefreshLayout
-上拉下拉 刷新容器
+- RefreshLayout
+  上拉下拉 刷新容器
 
-BottomFloatingActionButtonLocation
-fab控件 底部定位
+- BottomFloatingActionButtonLocation
+  fab控件 底部定位
 
-CoverCacheImage
-缓存、Cover模式的image
+- CoverCacheImage
+  缓存、Cover模式的image
 
-GradientTabIndicator
-渐变色tab指示器
+- GradientTabIndicator
+  渐变色tab指示器
 
-Button
-1. RRectButton 圆角图片
-2. RRectOutlinedButton 圆角线框图片
+- Button
+  1. RRectButton 圆角图片
+  2. RRectOutlinedButton 圆角线框图片
 
-Swiper
-轮播器 （三层：内容层、蒙版层、指示器层）
+- Swiper
+  轮播器 （三层：内容层、蒙版层、指示器层）
 
 
 #### 官方组件扩展
