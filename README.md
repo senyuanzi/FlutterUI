@@ -114,7 +114,7 @@ Row(children: [
 - BottomFloatingActionButtonLocation
   fab控件 底部定位
 
-- CoverCacheImage
+- CoverCacheImage(imageUrl,{placeholder})
   缓存、Cover模式的image
 
 - GradientTabIndicator

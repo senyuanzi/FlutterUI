@@ -3,12 +3,18 @@ import 'package:flutter/material.dart';
 
 ///默认cover模式，带有缓存的image
 class CoverCacheImage extends StatelessWidget {
-  const CoverCacheImage(this.imageUrl, {Key? key}) : super(key: key);
+  const CoverCacheImage(this.imageUrl, {Key? key, this.placeholder}) : super(key: key);
   final String imageUrl;
+  final String? placeholder;
 
   @override
   Widget build(BuildContext context) {
-    return Image(fit: BoxFit.cover, image: CachedNetworkImageProvider(imageUrl));
+    return CachedNetworkImage(
+      fit: BoxFit.cover,
+      imageUrl: imageUrl,
+      errorWidget: (context, url, error) =>
+          placeholder == null ? Container(color: Colors.grey) : Image.asset(placeholder!),
+    );
   }
 }
 
