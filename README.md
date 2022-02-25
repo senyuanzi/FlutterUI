@@ -13,7 +13,7 @@ and the Flutter guide for
 
 FlutterUI，轻便而高效的书写UI。
 
-### V0.3.8 文档
+### V0.3.9 文档
 
 后续会继续开发更新。
 
@@ -27,7 +27,7 @@ FlutterUI，轻便而高效的书写UI。
 #### 安装
 ```yaml
 dependencies:
-  the_flutter_ui: ^0.3.8
+  the_flutter_ui: ^0.3.9
 ```
 
 #### 示例
