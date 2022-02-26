@@ -19,6 +19,7 @@ export 'ui/widget/complex/blur_panel.dart';
 export 'ui/widget/complex/swiper.dart';
 export 'ui/widget/image.dart';
 export 'ui/widget/text.dart';
+export 'ui/border.dart';
 export 'input.dart';
 
 part 'ui/layout.dart';

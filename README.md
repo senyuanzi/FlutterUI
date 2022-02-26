@@ -30,59 +30,18 @@ FlutterUI，轻便而高效的书写UI。
 
 ```yaml
 dependencies:
-  the_flutter_ui: ^0.4.0
+  the_flutter_ui: ^0.4.1
 ```
 
 #### 示例
 
 ```dart
-Row
-(
-children: [
-const BlueButton("
-官
-方
-"
-)
-.
-marginOnly
-(
-left: 16
-)
-,
-const SizedBox(width: 12
-)
-,
-const WhiteOutlinedButton("
-线
-下
-"
-)
-,
-const Spacer()
-,
-const Text("
-免
-费
-"
-)
-.
-fontSize
-(10)
-.
-translate
-(0,
--
-7
-)
-]
-)
-.
-roundedRect
-(6)
-.
-paddingAll
-(8)
+Row(children: [
+    Text("").color(Colors.black12).fontSize(13),
+    Image(image: AssetImage("images/arrow.webp")).coverMode().size(width: 16, height: 24),
+    const Spacer(),
+    Text("").color(Colors.black12).fontSize(13),
+]).paddingSymmetric(horizontal: 16, vertical: 10)
 ```
 
 #### 布局

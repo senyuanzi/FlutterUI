@@ -18,7 +18,7 @@ class CoverCacheImage extends StatelessWidget {
   }
 }
 
-extension BorderX on CircleAvatar {
+extension CircleAvatarBorderX on CircleAvatar {
   Container border({double width = 2, Color color = const Color(0xff95d9f1)}) {
     return Container(
         decoration: BoxDecoration(
