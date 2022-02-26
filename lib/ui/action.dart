@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-extension WidgetEx<T extends Widget> on T {
+extension ActionX<T extends Widget> on T {
   Material onClick(GestureTapCallback? onClick) => action(onClick: onClick);
 
   Material onDoubleClick(GestureTapCallback? onDoubleClick) => action(onClick: onDoubleClick);
