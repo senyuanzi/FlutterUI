@@ -94,6 +94,8 @@ Row(children: [
 #### 效果
 
 - border 边框
+    1. border
+    2. circleBorder
 - roundedRect 圆角
     1. roundedRect
     2. roundedRectVertical
